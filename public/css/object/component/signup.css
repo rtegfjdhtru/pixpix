@@ -1,0 +1,107 @@
+.signup-filed {
+  height: calc(100% - 203px);
+  width: 100%;
+}
+
+.signup-block {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.signup-title {
+  font-size: 20px;
+  color: #2a2a2a;
+  font-weight: bold;
+  text-align: center;
+}
+
+.signup-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-label {
+  margin-bottom: 20px;
+}
+
+.form-label-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto 0px auto;
+}
+
+.form-error-text {
+  font-size: 13px;
+  color: #ff3c3c;
+}
+
+.form-link-text {
+  font-size: 13px;
+  color: #1a0dab;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+
+.form-submit {
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #373737;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+}
+
+.form-submit:hover {
+  cursor: pointer;
+  opacity: .7;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.form-link-content {
+  width: 100%;
+  margin: 20px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/*# sourceMappingURL=../../maps/object/component/signup.css.map */
