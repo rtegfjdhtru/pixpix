@@ -2,7 +2,7 @@
 
 @section('title','認証コード入力画面')
 
-@include('layouts.header')
+@include('layouts.headernomenu')
 
 @section('content')
     <div class="signup-filed">

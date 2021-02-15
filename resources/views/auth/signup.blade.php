@@ -2,7 +2,7 @@
 
 @section('title','新規登録')
 
-@include('layouts.header_nomenu')
+@include('layouts.headernomenu')
 
 @section('content')
     <div class="signup-filed">
