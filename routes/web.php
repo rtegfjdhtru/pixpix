@@ -48,9 +48,16 @@ Route::get('login',function (){
     return view('auth.login');
 });
 
-Route::get('signup',function (){
-    return view('auth.signup');
-});
+
+//Route::get('signup',function (){
+//    return view('auth.signup');
+//});
+Route::get('signup','AutnController@signup');
+Route::post('signup','AutnController@signPost');
+Route::post('signup','AutnController@userCreate');
+
+
+
 
 Route::get('history',function (){
     return view('history.history');

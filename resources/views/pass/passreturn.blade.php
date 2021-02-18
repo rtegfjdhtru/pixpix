@@ -16,7 +16,7 @@
                 </label>
 
                 <label class="form-label">
-                    <input type="password" name="password-re" placeholder="パスワード再入力" class="form-input">
+                    <input type="password" name="passwordRe" placeholder="パスワード再入力" class="form-input">
                 </label>
 
                 <input type="submit" value="送信" class="form-submit">
