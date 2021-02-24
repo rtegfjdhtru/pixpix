@@ -49,9 +49,7 @@ Route::get('login',function (){
 });
 
 
-//Route::get('signup',function (){
-//    return view('auth.signup');
-//});
+
 Route::get('signup','AutnController@signup');
 Route::post('signup','AutnController@signPost');
 Route::post('signup','AutnController@userCreate');

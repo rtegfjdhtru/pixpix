@@ -12,20 +12,16 @@ class AutnController extends Controller
         return view('auth.login');
     }
 
-    public function signup(Request $request){
-        $items = DB::select('select * from user');
+    public function signup(){
         return view('auth.signup');
     }
-    public function signPost(SignupRequest $request){
-        return view('auth.signup',['msg'=>'正しく入力']);
-    }
-
-    public function userCreate(Request $request){
+    public function userCreate(SignupRequest $request){
         $param =  [
           'email' =>$request->email,
           'password'=>$request->password,
         ];
         DB::insert('insert into user (email,password) values (:email,:password)',$param);
+        $session_user_id = $request->session()->put('user_id','1');
         return redirect('/index');
     }
 //    public function dataget(){
