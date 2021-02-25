@@ -29,9 +29,11 @@ Route::post('hello','HelloController@post');
 
 
 
-Route::get('index',function (){
-    return view('main.index');
-});
+//Route::get('index',function (){
+//    return view('main.index');
+//});
+
+Route::get('index','IndexController@index');
 
 
 Route::get('artpost',function (){
@@ -42,19 +44,6 @@ Route::get('artpost',function (){
 Route::get('artwork',function (){
     return view('artwork.artwork');
 });
-
-
-Route::get('login',function (){
-    return view('auth.login');
-});
-
-
-
-Route::get('signup','AutnController@signup');
-Route::post('signup','AutnController@signPost');
-Route::post('signup','AutnController@userCreate');
-
-
 
 
 Route::get('history',function (){
@@ -97,3 +86,7 @@ Route::get('user',function (){
 Route::get('passautn',function (){
     return view('pass.passautn');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

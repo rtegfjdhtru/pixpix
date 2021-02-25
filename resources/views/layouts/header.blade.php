@@ -23,7 +23,11 @@
                 <li class=""><a href="likes.html" class="">いいね</a></li>
                 <li class=""><a href="artpost.html" class="">投稿</a></li>
                 <li class=""><a href="profile.html" class="">プロフィール</a></li>
-                <li class=""><a href="" class="link">ログアウト</a></li>
+                <li class=""><a href="{{ route('logout') }}" class="link" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a></li>
+　　　　　　　　　　　{{--ログアウト処理--}}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" style="display: none;">
+                    @csrf
+                </form>
             </ul>
         </nav>
     </header>
