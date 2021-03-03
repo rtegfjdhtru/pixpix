@@ -11,6 +11,9 @@
             <h3 class="signup-title">新規登録</h3>
             <form class="signup-form" action="" method="post">
                 {{csrf_field()}}
+
+
+
                 <label class="form-label">
                     <input type="text" name="name" placeholder="ユーザー名" class="form-input" value="{{old('name')}}">
                     @if ($errors->has('name'))
@@ -39,7 +42,6 @@
                 <input type="submit" value="登録" class="form-submit">
                 <div class="form-link-content">
                     <a href="{{route('login')}}" class="form-link-text">ログイン</a>
-                    <a href="signup.html" class="form-link-text">新規登録</a>
                 </div>
 
 

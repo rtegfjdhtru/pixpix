@@ -10,7 +10,7 @@
     <div class="main">
         <section class="main-left">
             <div class="main-left-field">
-                <div class="main-left-cover"><img src="dist/img/img_11.jpg" alt="自分の画像" class="main-left-img"></div>
+                <div class="main-left-cover"><img src="dist/img/icon_01.jpeg" alt="自分の画像" class="main-left-img"></div>
                 <div class="main-left-backcolor">
                     <h2 class="main-left-name">あくまだいかん</h2>
                     <div class="main-left-info">
@@ -240,3 +240,5 @@
 @endsection
 
 @include('layouts.footer')
+
+insert into artwork () values ()

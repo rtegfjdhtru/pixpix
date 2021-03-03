@@ -13,14 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('main/{msg}', function ($msg = 'no message') {
-//   $html = <<< EOF
-//
-//    <html><body><h1>はろー</h1><p>{$msg}</p></body></html>
-//    EOF;
-//    return $html;
-////        view('welcome');
-//});
 
 
 Route::get('hello','HelloController@main');
@@ -36,10 +28,8 @@ Route::post('hello','HelloController@post');
 Route::get('index','IndexController@index');
 
 
-Route::get('artpost',function (){
-    return view('artpost.artpost');
-});
-
+Route::get('artpost','ArtpostController@index');
+Route::post('artpost','ArtpostController@post');
 
 Route::get('artwork',function (){
     return view('artwork.artwork');
@@ -88,5 +78,4 @@ Route::get('passautn',function (){
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
