@@ -14,6 +14,7 @@ class ArtpostController extends Controller {
     }
 
     public function post( ArtRequest $request ) {
+
         if($request->hasfile('img')) {
             foreach ( $request->file( 'img' ) as $file ) {
                 $name = $file->getClientOriginalName();
@@ -28,6 +29,7 @@ class ArtpostController extends Controller {
 
         $ArtPost = new ArtPost();
         $ArtPost->img = $request->img;
+        $ArtPost->user_id = Auth::id();
         $ArtPost->title = $request->title;
         $ArtPost->my_comment = $request->my_comment;
 
