@@ -29,6 +29,24 @@
             <div class="main-center-postarea-body">
                 <div class="main-center-postarea">
 
+                    @foreach($items as $item)
+                        <div class="post-card">
+                            <a href="artwork.html">
+                                <p class="post-card-cover"><img src="{{url('storage/app/public/uploads/'.$item->img)}}" alt="最新のイラストの画像"></p>
+                            </a>
+                            <div class="post-card-info">
+                                <div class="post-card-info-inner">
+                                    <a href="user.html"><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
+                                    <div class="post-card-info-inner-text">
+                                        <h2 class="post-card-title"><a href="artwork.html">{{$item->title}}</a></h2>
+                                        <p class="post-card-name"><a href="user.html">ささくれ(ユーザー名)</a></p>
+                                        <p class="post-card-count">閲覧数:{{$item->view_count}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
 
                     <div class="post-card">
                         <a href="artwork.html">
@@ -241,4 +259,3 @@
 
 @include('layouts.footer')
 
-insert into artwork () values ()

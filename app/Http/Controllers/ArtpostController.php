@@ -13,31 +13,21 @@ class ArtpostController extends Controller {
         return view( 'artpost.artpost' );
     }
 
-    public function post( ArtRequest $request ) {
+    public function ImagePost( ArtRequest $request ) {
+        $post = new ArtPost();
 
-        if($request->hasfile('img')) {
-            foreach ( $request->file( 'img' ) as $file ) {
-                $name = $file->getClientOriginalName();
-                $file->move( public_path() . '/uploads/', $name );
-                $imgData[] = $name;
-
-            $fileModal = new ArtPost();
-            $fileModal->name = json_encode($imgData);
-            $fileModal->image_path = json_encode($imgData);
+        if(request('image')){
+            $filename=request()->file('image')->getClientOriginalName();
+            $inputs['image']=request('image')->storeAs('public/images', $filename);
         }
-        }
-
-        $ArtPost = new ArtPost();
-        $ArtPost->img = $request->img;
-        $ArtPost->user_id = Auth::id();
-        $ArtPost->title = $request->title;
-        $ArtPost->my_comment = $request->my_comment;
-
-
-
-        $ArtPost->save();
+        $post->user_id = Auth::id();
+        $post->title = $request->title;
+        $post->my_comment = $request->my_comment;
+        $post->image = $filename;
+        $post->save();
+//        $post->create($inputs);
 
         return redirect( '/index' );
-
     }
+
 }

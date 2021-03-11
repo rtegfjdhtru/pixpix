@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,15 @@ Route::post('hello','HelloController@post');
 //    return view('main.index');
 //});
 
-Route::get('index','IndexController@index');
+//Route::get('index','IndexController@index');
+//Route::get('index','IndexController@getNewArt');
 
+Route::get('index',[App\Http\Controllers\IndexController::class, 'index']);
+Route::get('index',[App\Http\Controllers\IndexController::class, 'getNewArt']);
 
-Route::get('artpost','ArtpostController@index');
-Route::post('artpost','ArtpostController@post');
+Route::get('artpost',[App\Http\Controllers\ArtpostController::class, 'index']);
+Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost']);
+
 
 Route::get('artwork',function (){
     return view('artwork.artwork');

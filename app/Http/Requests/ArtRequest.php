@@ -26,7 +26,7 @@ class ArtRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'img'        => 'required|mimes:jpg,png|max:31457280', //30MB
+            'image'        => 'required|mimes:jpg,png|max:31457280', //30MB
             'title'      => 'required',
             'my_comment' => '',
             'tag'        => 'required',
@@ -35,9 +35,9 @@ class ArtRequest extends FormRequest {
 
     public function messages() {
         return [
-            'img.required' => '画像が選択されていません。',
-            'img.mimes' => '拡張子が違います。',
-            'img.max' =>'容量が上限を超えています。30MB以内にしてください。',
+            'image.required' => '画像が選択されていません。',
+            'image.mimes' => '拡張子が違います。',
+            'image.max' =>'容量が上限を超えています。30MB以内にしてください。',
             'title.required' => 'タイトルが空白です。',
             'tag.required' => 'タグが空白です。',
         ];
