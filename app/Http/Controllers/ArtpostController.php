@@ -13,6 +13,11 @@ class ArtpostController extends Controller {
         return view( 'artpost.artpost' );
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function ImagePost( ArtRequest $request ) {
         $post = new ArtPost();
 
@@ -27,7 +32,11 @@ class ArtpostController extends Controller {
         $post->save();
 //        $post->create($inputs);
 
+
+
+
         return redirect( '/index' );
     }
 
 }
+

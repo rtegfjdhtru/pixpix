@@ -29,8 +29,9 @@ Route::post('hello','HelloController@post');
 //Route::get('index','IndexController@index');
 //Route::get('index','IndexController@getNewArt');
 
-Route::get('index',[App\Http\Controllers\IndexController::class, 'index']);
-Route::get('index',[App\Http\Controllers\IndexController::class, 'getNewArt']);
+Route::get('index',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
+//Route::get('index',[App\Http\Controllers\IndexController::class, 'getUser']);
+//Route::get('index',[App\Http\Controllers\IndexController::class, 'getNewArt']);
 
 Route::get('artpost',[App\Http\Controllers\ArtpostController::class, 'index']);
 Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost']);
@@ -66,9 +67,9 @@ Route::get('passreturn',function (){
     return view('pass.passreturn');
 });
 
-Route::get('profile',function (){
-    return view('profile.profile');
-});
+
+Route::get('profile', [App\Http\Controllers\ProfileController::class, 'index']);
+Route::post('profile', [App\Http\Controllers\ProfileController::class, 'update']);
 
 Route::get('send',function (){
     return view('send.send');
