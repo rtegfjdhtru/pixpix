@@ -42,7 +42,8 @@
             <div class="comment-content">
                 <h4 class="comment-title">コメント</h4>
                 <form action="" method="post" class="form-comment">
-                    <input type="text" name="comment" class="form-comment-input">
+                    {{csrf_field()}}
+                    <input type="text" name="text" class="form-comment-input">
                     <input type="submit" value="送信">
                 </form>
             </div>

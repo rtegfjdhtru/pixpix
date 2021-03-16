@@ -22,12 +22,17 @@ class ArtworkController extends Controller
 
         return view('artwork.artwork',$param);
     }
-    public function comment_post(Request $request){
+    public function commentPost(Request $request){
+        $artwork_id = $request->id; //現在のアートワークIDを取得
         $this->validate($request,Comment::$rules);
-        $comment = new Comment;
-        $form = $request->all();
-        unset($form['_token']);
-        $comment->fill($form)->save();
-        return redirect('artwork');
+        $comment = new Comment();
+//        $form = $request->all();
+//        unset($form['_token']);
+//        $comment->fill($form)->save();
+        $comment->artwork_id = $artwork_id;
+        $comment->user_id = Auth::user()->id;
+        $comment->text = $request->text;
+        $comment->save();
+        return redirect('artwork'.'?id='.$artwork_id);
     }
 }

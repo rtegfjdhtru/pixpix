@@ -15,7 +15,7 @@ class Comment extends Model {
         return $this->belongsTo( 'App\Models\User' );
     }
 
-    public static $rule = [
-        'comment' => 'required'
+    public static $rules = [
+        'text' => 'required'
     ];
 }
