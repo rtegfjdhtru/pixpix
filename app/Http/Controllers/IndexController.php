@@ -8,10 +8,16 @@ use App\Models\ArtPost;
 
 class IndexController extends Controller {
     public function index(Request $request) {
-        $items = ArtPost::get();
-//        $username= Auth::user()->name;
-//        $userimage= Auth::user()->image;
+//        $items = ArtPost::get();
+//
+//        $user  = Auth::user();
+//        $param = ['items'=>$items, 'user'=>$user];
+
+
+
+
         $user  = Auth::user();
+        $items = ArtPost::all();
         $param = ['items'=>$items, 'user'=>$user];
         return view( 'main.index',$param );
     }

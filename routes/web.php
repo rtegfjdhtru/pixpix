@@ -37,9 +37,10 @@ Route::get('artpost',[App\Http\Controllers\ArtpostController::class, 'index']);
 Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost']);
 
 
-Route::get('artwork',function (){
-    return view('artwork.artwork');
-});
+Route::get('/artwork',[App\Http\Controllers\ArtworkController::class, 'index']);
+//Route::get('artwork/{id}',function ($id){
+//    return view('artwork.artwork',$id);
+//});
 
 
 Route::get('history',function (){

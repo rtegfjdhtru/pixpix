@@ -13,4 +13,7 @@ class ArtPost extends Model
     use HasFactory;
     //アクセスしてはダメなカラム
     protected $guarded = array('id');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

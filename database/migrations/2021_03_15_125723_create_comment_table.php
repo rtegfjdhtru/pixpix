@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtpostTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateArtpostTable extends Migration
      */
     public function up()
     {
-        Schema::create('artpost', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->id();
+            $table->Integer('artwork_id');
             $table->Integer('user_id');
-            $table->string('image');
-            $table->string('title');
-            $table->string('my_comment');
-            $table->string('tag');
-            $table->Integer('good_count')->default(0);
-            $table->Integer('view_count')->default(0);
-            $table->boolean('delete_flg');
+            $table->string('text');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateArtpostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artpost');
+        Schema::dropIfExists('comment');
     }
 }

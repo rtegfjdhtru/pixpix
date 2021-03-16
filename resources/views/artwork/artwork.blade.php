@@ -1,26 +1,26 @@
 @extends('layouts.common')
 
-@section('title','画像を表示しているタイトル')
+@section('title',$artwork['title'])
 
 @include('layouts.header')
 
 @section('content')
     <section class="artwork-content">
         <div class="artwork-content-left">
-            <p class="artwork-img"><a href=""><img src="dist/img/img6.jpg" alt="投稿画像"></a></p>
+            <p class="artwork-img"><a href=""><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$artwork['image']}}" alt="投稿画像"></a></p>
             <div class="artwork-info">
                 <div class="artwork-info-main">
-                    <h3 class="artwork-title">カメレオン</h3>
+                    <h3 class="artwork-title">{{$artwork['title']}}</h3>
                     <i class="far fa-star fa-3x star-icon js-star"></i>
                 </div>
                 <div class="artwork-info-content">
                     <div class="artwork-text-content">
-                        <p class="artwork-evaluation">閲覧数:10000</p>
-                        <p class="artwork-data">2020/1/1</p>
+                        <p class="artwork-evaluation">閲覧数:{{$artwork['view_count']}}</p>
+                        <p class="artwork-data">{{$artwork['created_at']}}</p>
                     </div>
                     <div class="artwork-good">
                         <i class="far fa-thumbs-up fa-2x good-icon"></i>
-                        <p>1000</p>
+                        <p>{{$artwork['good_count']}}</p>
                     </div>
                 </div>
 
@@ -37,9 +37,8 @@
                     <a href="">カメレオン</a>
                     <a href="">カメレオン</a>
                 </div>
-
+                <p>{{$artwork->my_comment}}</p>
             </div>
-
             <div class="comment-content">
                 <h4 class="comment-title">コメント</h4>
                 <form action="" method="post" class="form-comment">
@@ -48,37 +47,15 @@
                 </form>
             </div>
 
+            @foreach($comment as $data)
             <div class="comment-content-post">
-                <p class="comment-icon"><img src="dist/img/img4.jpg" alt="コメントのアイコン"></p>
+                <p class="comment-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->user->image}}" alt="コメントのアイコン"></p>
                 <div class="comment-post-area">
-                    <h4 class="comment-name">デスピサロ</h4>
-                    <p>テストコメントテストコメントテストコメントテストコメントテストコメントテストコメント</p>
+                    <h4 class="comment-name">{{$data->user->name}}</h4>
+                    <p>{{$data->text}}</p>
                 </div>
             </div>
-
-            <div class="comment-content-post">
-                <p class="comment-icon"><img src="dist/img/img4.jpg" alt="コメントのアイコン"></p>
-                <div class="comment-post-area">
-                    <h4 class="comment-name">デスピサロ</h4>
-                    <p>テストコメントテストコメントテストコメントテストコメントテストコメントテストコメント</p>
-                </div>
-            </div>
-
-            <div class="comment-content-post">
-                <p class="comment-icon"><img src="dist/img/img4.jpg" alt="コメントのアイコン"></p>
-                <div class="comment-post-area">
-                    <h4 class="comment-name">デスピサロ</h4>
-                    <p>テストコメントテストコメントテストコメントテストコメントテストコメントテストコメント</p>
-                </div>
-            </div>
-
-            <div class="comment-content-post">
-                <p class="comment-icon"><img src="dist/img/img4.jpg" alt="コメントのアイコン"></p>
-                <div class="comment-post-area">
-                    <h4 class="comment-name">デスピサロ</h4>
-                    <p>テストコメントテストコメントテストコメントテストコメントテストコメントテストコメント</p>
-                </div>
-            </div>
+            @endforeach
 
         </div>
         <div class="artwork-content-right">

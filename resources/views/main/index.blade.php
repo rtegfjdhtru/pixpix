@@ -34,15 +34,15 @@
 
                     @foreach($items as $item)
                         <div class="post-card">
-                            <a href="artwork.html">
+                            <a href="artwork?id={{$item->id}}">
                                 <p class="post-card-cover"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{($item->image)}}" alt="最新のイラストの画像"></p>
                             </a>
                             <div class="post-card-info">
                                 <div class="post-card-info-inner">
-                                    <a href="user.html"><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
+                                    <a href="user.html"><p class="post-card-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$item->user->image}}" alt="ユーザのアイコン"></p></a>
                                     <div class="post-card-info-inner-text">
                                         <h2 class="post-card-title"><a href="artwork.html">{{$item->title}}</a></h2>
-                                        <p class="post-card-name"><a href="user.html">ささくれ(ユーザー名)</a></p>
+                                        <p class="post-card-name"><a href="user.html">{{$item->user->name}}</a></p>
                                         <p class="post-card-count">閲覧数:{{$item->view_count}}</p>
                                     </div>
                                 </div>
