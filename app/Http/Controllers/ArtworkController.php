@@ -11,11 +11,14 @@ class ArtworkController extends Controller
 {
     public function index(Request $request){
         $user_id =  Auth::id();
-        $artwork_id = $request->id; //userのid取得
+        $artwork_id = $request->id; //URLのuserのid取得
 
         $artwork = ArtPost::find($artwork_id); //url のidぱらめーたがひつっよう
         $comment = Comment::where('artwork_id' , $artwork_id)->get();
         $already_liked = Likes::where('user_id', $user_id)->where('artwork_id', $artwork_id)->first();
+        //閲覧数カウント増やし
+        $artwork->view_count = $artwork->view_count+1;
+        $artwork->save();
         $param = [
             'artwork' => $artwork,
             'comment' => $comment,
