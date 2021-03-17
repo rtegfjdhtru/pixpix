@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://kit.fontawesome.com/655a26a7cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
     <link rel="stylesheet" href="dist/css/style.css">
@@ -34,6 +35,32 @@
 <script src="dist/js/footerFixed.js"></script>
 <script src="dist/js/app.js"></script>
 
+<script>
+    //いいね機能
+    $(function (){
+        $('.js-star').on('click',function (){
+            let $this = $(this);
+            let likeId = $this.data('likes');
+            $.ajax({
+                headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
+                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                },  //↑name属性がcsrf-tokenのmetaタグのcontent属性の値を取得
+                url:'artwork'+location.search,
+                method:'POST',
+                data:{
+                    'likeId' : likeId,
+                }
+            })
+                //通信成功した時の処理
+                .done(function () {
+                    console.log('せいこう');
+                })
+                .fail(function () {
+                    console.log('しっぱい');
+                });
+        }) ;
+    });
+</script>
 
 </body>
 </html>

@@ -1,17 +1,21 @@
 @extends('layouts.common')
 
 @section('title',$artwork['title'])
-
 @include('layouts.header')
 
 @section('content')
     <section class="artwork-content">
         <div class="artwork-content-left">
-            <p class="artwork-img"><a href=""><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$artwork['image']}}" alt="投稿画像"></a></p>
+            <p class="artwork-img"><a href=""><img
+                        src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$artwork['image']}}"
+                        alt="投稿画像"></a></p>
             <div class="artwork-info">
                 <div class="artwork-info-main">
                     <h3 class="artwork-title">{{$artwork['title']}}</h3>
-                    <i class="far fa-star fa-3x star-icon js-star"></i>
+                    <i class="fa-star fa-3x star-icon js-star
+                            @if ($already_liked)fas star-icon-active
+                            @else far
+                            @endif" data-likes="{{$artwork['id']}}"></i>
                 </div>
                 <div class="artwork-info-content">
                     <div class="artwork-text-content">
@@ -49,13 +53,15 @@
             </div>
 
             @foreach($comment as $data)
-            <div class="comment-content-post">
-                <p class="comment-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->user->image}}" alt="コメントのアイコン"></p>
-                <div class="comment-post-area">
-                    <h4 class="comment-name">{{$data->user->name}}</h4>
-                    <p>{{$data->text}}</p>
+                <div class="comment-content-post">
+                    <p class="comment-icon"><img
+                            src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->user->image}}"
+                            alt="コメントのアイコン"></p>
+                    <div class="comment-post-area">
+                        <h4 class="comment-name">{{$data->user->name}}</h4>
+                        <p>{{$data->text}}</p>
+                    </div>
                 </div>
-            </div>
             @endforeach
 
         </div>
@@ -64,10 +70,11 @@
 
 
                 <div href="" class="recommended-post">
-                    <a href="artwork.html"> <p class="recommended-img"><img src="dist/img/img4.jpg" alt="おすすめの画像"></p></a>
+                    <a href="artwork.html"><p class="recommended-img"><img src="dist/img/img4.jpg" alt="おすすめの画像"></p>
+                    </a>
                     <div class="recommended-textarea">
-                        <a href="artwork.html"> <h4 class="recommended-title">イラストタイトル</h4></a>
-                        <a href="user.html"> <p class="recommended-name">グラハム</p></a>
+                        <a href="artwork.html"><h4 class="recommended-title">イラストタイトル</h4></a>
+                        <a href="user.html"><p class="recommended-name">グラハム</p></a>
                         <p class="recommended-info">閲覧数:1111</p>
                     </div>
                 </div>

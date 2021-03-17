@@ -37,6 +37,7 @@ Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost
 
 Route::get('/artwork',[App\Http\Controllers\ArtworkController::class, 'index']);
 Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'commentPost']);
+Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'likes']);
 
 
 Route::get('history',function (){
