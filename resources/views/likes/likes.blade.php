@@ -17,20 +17,16 @@
 
                 @foreach($likes as $data)
                 <div class="post-card-search">
-                        <a href="">
-                            <p class="post-card-cover"><img
-                                    src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->artpost->image}}"
-                                    alt="最新のイラストの画像"></p>
+                        <a href="artwork?id={{$data->artpost->id}}">
+                            <p class="post-card-cover"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->artpost->image}}" alt="最新のイラストの画像"></p>
                         </a>
                         <div class="post-card-info">
                             <div class="post-card-info-inner">
-                                <a href=""><p class="post-card-icon"><img
-                                            src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->user->image}}"
-                                           alt="ユーザのアイコン"></p></a>
+                                <a href=""><p class="post-card-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->artpost->user->image}}" alt="ユーザのアイコン"></p></a>
                                 <div class="post-card-info-inner-text">
                                     <h2 class="post-card-title"><a href="">{{$data->artpost->title}}</a></h2>
-                                    <p class="post-card-name"><a href="">{{$data->user->name}}</a></p>
-                                    <p class="post-card-count">閲覧数:11111</p>
+                                    <p class="post-card-name"><a href="">{{$data->artpost->user->name}}</a></p>
+                                    <p class="post-card-count">閲覧数: {{$data->artpost->view_count}}</p>
                                 </div>
                             </div>
                         </div>
