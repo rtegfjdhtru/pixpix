@@ -41,6 +41,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function artPost(){
-        return $this->hasMany('App\Models\ArtPost');
+        return $this->hasMany(ArtPost::class);
+    }
+    public function artPosts(){
+//        return $this->belongsToMany(ArtPost::class,'likes','user_id','artwork_id');
+        return $this->belongsToMany(ArtPost::class);
+    }
+    public function likes(){
+        return $this->belongsToMany(Likes::class);
     }
 }

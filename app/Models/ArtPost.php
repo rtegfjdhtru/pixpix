@@ -14,6 +14,12 @@ class ArtPost extends Model
     //アクセスしてはダメなカラム
     protected $guarded = array('id');
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
+    }
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+    public function likes(){
+        return $this->belongsTo('App\Models\Likes','artwork_id');
     }
 }

@@ -9,4 +9,12 @@ class Likes extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public function artpost(){
+        return $this->belongsTo('App\Models\ArtPost','artwork_id');
+
+
+    }
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
