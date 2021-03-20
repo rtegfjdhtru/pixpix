@@ -22,9 +22,9 @@
                         <p class="artwork-evaluation">閲覧数:{{$artwork['view_count']}}</p>
                         <p class="artwork-data">{{$artwork['created_at']}}</p>
                     </div>
-                    <div class="artwork-good">
-                        <i class="far fa-thumbs-up fa-2x good-icon"></i>
-                        <p>{{$artwork['good_count']}}</p>
+                    <div class="artwork-good" id="js-artwork-good">
+                        <i class="far fa-thumbs-up fa-2x good-icon js-good-btn"></i>
+                        <p class="js-good-count">{{$artwork['good_count']}}</p>
                     </div>
                 </div>
 

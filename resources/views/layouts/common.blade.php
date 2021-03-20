@@ -37,18 +37,18 @@
 
 <script>
     //いいね機能
-    $(function (){
-        $('.js-star').on('click',function (){
+    $(function () {
+        $('.js-star').on('click', function () {
             let $this = $(this);
             let likeId = $this.data('likes');
             $.ajax({
                 headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
-                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },  //↑name属性がcsrf-tokenのmetaタグのcontent属性の値を取得
-                url:'artwork'+location.search,
-                method:'POST',
-                data:{
-                    'likeId' : likeId,
+                url: 'artwork' + location.search,
+                method: 'POST',
+                data: {
+                    'likeId': likeId,
                 }
             })
                 //通信成功した時の処理
@@ -58,8 +58,47 @@
                 .fail(function () {
                     console.log('しっぱい');
                 });
-        }) ;
+        });
+
+
+
+        // var goodBtn = $('.js-good-btn');
+        // var goodcount = $('.js-good-count').val();
+        // goodBtn.on('click', function () {
+        //     goodcount++;
+        //     $('.js-good-count').text(goodcount);
+        // });
+
+
+        var goodBtn = $('.js-good-btn');
+        var goodcount = $('.js-good-count').text();
+            goodBtn.on('click', function () {
+
+                $.ajax({
+                    headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },  //↑name属性がcsrf-tokenのmetaタグのcontent属性の値を取得
+                    url: 'artwork' + location.search,
+                    method: 'POST',
+                    data: {
+                        'goodcount': goodcount,
+                    }
+                })
+                    //通信成功した時の処理
+                    .done(function () {
+                        console.log(goodcount);
+
+                        goodcount++;
+                        $('.js-good-count').text(goodcount);
+                    })
+                    .fail(function () {
+                        console.log('goodcount:しっぱい');
+                    });
+            });
+
     });
+
+
 </script>
 
 </body>

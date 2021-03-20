@@ -28,6 +28,10 @@ class ArtworkController extends Controller
 
         return view('artwork.artwork',$param);
     }
+    //認証
+    public function __construct() {
+        $this->middleware( 'auth' );
+    }
     public function commentPost(Request $request){
         $artwork_id = $request->id; //現在のアートワークIDを取得
         $this->validate($request,Comment::$rules);
@@ -53,5 +57,13 @@ class ArtworkController extends Controller
         }else { //もしこのユーザーがこの投稿に既にいいねしてたらdelete
             Likes::where('artwork_id', $artwork_id)->where('user_id', $user_id)->delete();
         }
+        }
+
+        public function goodCount(Request $request){
+            $user_id =  Auth::id(); //1.ログインユーザーのid取得
+            $artwork_id = $request->id; //2.投稿idの取得
+            $artwork = ArtPost::find($artwork_id);
+            $artwork->good_count = $artwork->good_count+1;
+            $artwork->save();
         }
 }
