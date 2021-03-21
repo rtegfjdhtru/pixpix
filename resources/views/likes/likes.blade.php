@@ -35,13 +35,16 @@
             </div>
 
             <nav class="pagination">
-                <ul>
-                    <li><a href="" class="pagination-active">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                </ul>
+{{--                {{$likes->appends(['sort'=>$sort])->links()}}--}}
+                                        {{$likes->links('pagination::bootstrap-4')}}
+
+{{--                <ul>--}}
+{{--                    <li><a href="" class="pagination-active">1</a></li>--}}
+{{--                    <li><a href="">2</a></li>--}}
+{{--                    <li><a href="">3</a></li>--}}
+{{--                    <li><a href="">4</a></li>--}}
+{{--                    <li><a href="">5</a></li>--}}
+{{--                </ul>--}}
             </nav>
         </div>
     </div>
