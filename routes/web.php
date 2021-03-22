@@ -35,11 +35,11 @@ Route::get('artpost',[App\Http\Controllers\ArtpostController::class, 'index']);
 Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost']);
 
 
-Route::get('/artwork',[App\Http\Controllers\ArtworkController::class, 'index']);
-Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'commentPost']);
-Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'likes']);
-//Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'goodCount']);
-
+Route::get('artwork',[App\Http\Controllers\ArtworkController::class, 'index']);
+Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'commentPost']);
+//Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'likes']);
+//Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'goodCount']);
+//Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'del']);
 
 Route::get('history',function (){
     return view('history.history');
@@ -47,10 +47,9 @@ Route::get('history',function (){
 
 Route::get('/likes',[App\Http\Controllers\LikesController::class, 'index']);
 
-Route::get('mycontrol',function (){
-    return view('mycontrol.mycontrol');
-});
 
+Route::get('/mycontrol',[App\Http\Controllers\MycontrolController::class, 'index']);
+Route::post('/mycontrol',[App\Http\Controllers\MycontrolController::class, 'artworkDel']);
 
 Route::get('passchange',function (){
     return view('pass.passchange');

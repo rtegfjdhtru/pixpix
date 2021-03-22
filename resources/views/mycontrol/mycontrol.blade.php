@@ -13,10 +13,10 @@
         </div>
 
         <div class="user-info">
-            <p class="user-page-icon"><img src="dist/img/img7.jpg" alt="ユーザーページのアイコン"></p>
+            <p class="user-page-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$user_data['image']}}" alt="ユーザーページのアイコン"></p>
             <div class="user-text-wrap">
-                <h2 class="user-page-name">あくまだいかん</h2>
-                <p class="user-self-text">自己紹介分自己紹介分自己紹介分自己紹介分自己紹介分自己紹介分</p>
+                <h2 class="user-page-name">{{$user_data['name']}}</h2>
+                <p class="user-self-text">{{$user_data['selfText']}}</p>
             </div>
         </div>
 
@@ -24,116 +24,46 @@
 
             <nav class="pagination user-top-pagination">
                 <ul>
-                    <li><a href="" class="pagination-active">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
+                    {{$my_artwork->links('pagination::bootstrap-4')}}
                 </ul>
             </nav>
 
             　　　　　　　<!--モーダル-->
             <div id="ex1" class="modal">
                 <p class="model-text">投稿した画像を削除してもよろしいでしょうか？</p>
-                <div class="model-wrap">
-                    <a href="#" rel="modal:close" class="model-btn-del">削除する</a>
+                    <form action="" method="post" class="model-wrap">
+                        {{csrf_field()}}
+                    <input type="submit" rel="modal:close" class="model-btn-del" value="削除する">
                     <a href="#" rel="modal:close" class="model-btn-back">閉じる</a>
-                </div>
+                    </form>
             </div>
 
             <div class="search-content">
+                @foreach($my_artwork as $data)
                 <div class="post-card-search">
-                    <a href="artwork.html">
-                        <p class="post-card-cover"><img src="dist/img/img7.jpg" alt="最新のイラストの画像"></p>
+                    <a href="artwork?id={{$data->id}}">
+                        <p class="post-card-cover"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->image}}" alt="最新のイラストの画像"></p>
                     </a>
                     <div class="post-card-info">
                         <div class="post-card-info-inner">
-                            <a href=""><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
+                            <a href=""><p class="post-card-icon"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->user->image}}" alt="ユーザのアイコン"></p></a>
                             <div class="post-card-info-inner-text">
-                                <h2 class="post-card-title"><a href="">願望</a></h2>
-                                <p class="post-card-name"><a href="">ささくれ(ユーザー名)</a></p>
-                                <p class="post-card-count">閲覧数:11111</p>
+                                <h2 class="post-card-title"><a href="">{{$data->title}}</a></h2>
+                                <p class="post-card-name"><a href="">{{$data->user->name}}</a></p>
+                                <p class="post-card-count">閲覧数:{{$data->view_count}}</p>
                                 <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="post-card-search">
-                    <a href="">
-                        <p class="post-card-cover"><img src="dist/img/img7.jpg" alt="最新のイラストの画像"></p>
-                    </a>
-                    <div class="post-card-info">
-                        <div class="post-card-info-inner">
-                            <a href=""><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
-                            <div class="post-card-info-inner-text">
-                                <h2 class="post-card-title"><a href="">願望</a></h2>
-                                <p class="post-card-name"><a href="">ささくれ(ユーザー名)</a></p>
-                                <p class="post-card-count">閲覧数:11111</p>
-                                <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="post-card-search">
-                    <a href="">
-                        <p class="post-card-cover"><img src="dist/img/img7.jpg" alt="最新のイラストの画像"></p>
-                    </a>
-                    <div class="post-card-info">
-                        <div class="post-card-info-inner">
-                            <a href=""><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
-                            <div class="post-card-info-inner-text">
-                                <h2 class="post-card-title"><a href="">願望</a></h2>
-                                <p class="post-card-name"><a href="">ささくれ(ユーザー名)</a></p>
-                                <p class="post-card-count">閲覧数:11111</p>
-                                <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-card-search">
-                    <a href="">
-                        <p class="post-card-cover"><img src="dist/img/img7.jpg" alt="最新のイラストの画像"></p>
-                    </a>
-                    <div class="post-card-info">
-                        <div class="post-card-info-inner">
-                            <a href=""><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
-                            <div class="post-card-info-inner-text">
-                                <h2 class="post-card-title"><a href="">願望</a></h2>
-                                <p class="post-card-name"><a href="">ささくれ(ユーザー名)</a></p>
-                                <p class="post-card-count">閲覧数:11111</p>
-                                <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post-card-search">
-                    <a href="">
-                        <p class="post-card-cover"><img src="dist/img/img7.jpg" alt="最新のイラストの画像"></p>
-                    </a>
-                    <div class="post-card-info">
-                        <div class="post-card-info-inner">
-                            <a href=""><p class="post-card-icon"><img src="dist/img/img4.jpg" alt="ユーザのアイコン"></p></a>
-                            <div class="post-card-info-inner-text">
-                                <h2 class="post-card-title"><a href="">願望</a></h2>
-                                <p class="post-card-name"><a href="">ささくれ(ユーザー名)</a></p>
-                                <p class="post-card-count">閲覧数:11111</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <nav class="pagination">
                 <ul>
-                    <li><a href="" class="pagination-active">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
+                    {{$my_artwork->links('pagination::bootstrap-4')}}
                 </ul>
             </nav>
 

@@ -1,6 +1,6 @@
 @extends('layouts.common')
 
-@section('title','投稿画面')
+@section('title','いいね')
 
 @include('layouts.header')
 
@@ -12,7 +12,7 @@
                 <h3 class="c-top-warp-title">いいね</h3>
             </div>
 
-            <h4 class="search-result-text">総いいね数:1111件</h4>
+{{--            <h4 class="search-result-text">総いいね数:1111件</h4>--}}
             <div class="search-content">
 
                 @foreach($likes as $data)
