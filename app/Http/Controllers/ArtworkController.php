@@ -69,19 +69,16 @@ class ArtworkController extends Controller {
     }
 
     public function goodCount( Request $request ) {
-        if(!empty($request->good)){
             $user_id             = Auth::id(); //1.ログインユーザーのid取得
             $artwork_id          = $request->id; //2.投稿idの取得
             $artwork             = ArtPost::find( $artwork_id );
             $artwork->good_count = $artwork->good_count + 1;
             $artwork->save();
-        }
     }
 
     public function del( Request $request ) {
-        if ( $request->del ) {
-            ArtPost::find( $request->id )->delete();
+            ArtPost::find($request->id)->delete();
+            Likes::where('artwork_id',$request->id)->delete();
             return redirect( 'index' );
-        }
     }
 }

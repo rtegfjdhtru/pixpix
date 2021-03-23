@@ -37,9 +37,9 @@ Route::post('artpost',[App\Http\Controllers\ArtpostController::class, 'ImagePost
 
 Route::get('artwork',[App\Http\Controllers\ArtworkController::class, 'index']);
 Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'commentPost']);
-//Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'likes']);
-//Route::post('artwork',[App\Http\Controllers\ArtworkController::class, 'goodCount']);
-//Route::post('/artwork',[App\Http\Controllers\ArtworkController::class, 'del']);
+Route::post('artwork/likes',[App\Http\Controllers\ArtworkController::class, 'likes']);
+Route::post('artwork/good',[App\Http\Controllers\ArtworkController::class, 'goodCount']);
+Route::post('artwork/del',[App\Http\Controllers\ArtworkController::class, 'del']);
 
 Route::get('history',function (){
     return view('history.history');

@@ -45,7 +45,7 @@
                 headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },  //↑name属性がcsrf-tokenのmetaタグのcontent属性の値を取得
-                url: 'artwork' + location.search,
+                url: 'artwork/likes' + location.search,
                 method: 'POST',
                 data: {
                     'likeId': likeId,
@@ -78,7 +78,7 @@
                     headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },  //↑name属性がcsrf-tokenのmetaタグのcontent属性の値を取得
-                    url: 'artwork' + location.search,
+                    url: 'artwork/good' + location.search,
                     method: 'POST',
                     data: {
                         'goodcount': goodcount,

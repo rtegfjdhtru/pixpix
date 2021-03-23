@@ -22,17 +22,15 @@
                         <p class="artwork-evaluation">閲覧数:{{$artwork['view_count']}}</p>
                         <p class="artwork-data">{{$artwork['created_at']}}</p>
                     </div>
-{{--
                     <div class="artwork-good" id="js-artwork-good">
                         <i class="far fa-thumbs-up fa-2x good-icon js-good-btn"></i>
                         <p class="js-good-count">{{$artwork['good_count']}}</p>
                     </div>
-                    --}}
                 </div>
                 @if($artwork['user_id'] === $user_data['id'])
-                    <form method="post" action="">
+                    <form method="post" action="artwork/del?id={{$artwork['id']}}">
                         {{csrf_field()}}
-                    <input type="submit" value="削除" name="del">
+                    <input type="submit" value="削除" name="">
                     </form>
                 @endif
                 <div class="artwork-tag">
