@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\ArtPost;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller {
     public function index(Request $request) {
@@ -20,7 +21,11 @@ class IndexController extends Controller {
         $user  = Auth::user();
 //        $items = ArtPost::all();
         $items = ArtPost::orderBy('id','desc')->limit(6)->get();
-        $param = ['items'=>$items, 'user'=>$user];
+        $nowTime = date('Y-m-d');
+//        $rank = ArtPost::where('created_at','>=',date('Y-m-d').'00:00:00')->limit(3);
+//        $rank = DB::table('artpost')->where('created_at','<',date('Y-m-d H:i:s'))->limit(3)->get();
+        $rank = DB::table('artpost')->where('created_at','>=',DB::raw('DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)'))->orderby('view_count','desc')->limit(3)->get();
+        $param = ['items'=>$items, 'user'=>$user,'rank'=>$rank];
         return view( 'main.index',$param );
     }
 

@@ -8,6 +8,7 @@
 @section('content')
 
     <div class="main">
+
         <section class="main-left">
 {{--            @foreach($userData as $item)--}}
 
@@ -82,33 +83,36 @@
             <h3 class="main-center-title">急上昇中のイラスト</h3>
             <div class="main-right-inner">
                 <div class="rank-card">
-                    <a href="artwork.html"> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>
+                    @foreach($rank as $data)
+                    <a href="artwork?id={{$data->id}}"> <p class="rank-card-cover"><img src="http://localhost:8888/create-file/pixpix/public/storage/images/{{$data->image}}" alt="急上昇イラスト"></p></a>
                     <div class="">
-                        <h2 class="rank-card-title"><a href="artwork.html">願望</a></h2>
+                        <h2 class="rank-card-title"><a href="artwork.html">{{$data->title}}</a></h2>
                         <a href="user.html" class="rank-card-user">ささくれ(ユーザー名)</a>
                     </div>
+                    @endforeach
+
                 </div>
-                <div class="rank-card">
-                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>
-                    <div class="">
-                        <h2 class="rank-card-title"><a href="">願望</a></h2>
-                        <a href="" class="rank-card-user">ユーザー名</a>
-                    </div>
-                </div>
-                <div class="rank-card">
-                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>
-                    <div class="">
-                        <h2 class="rank-card-title"><a href="">願望</a></h2>
-                        <a href="" class="rank-card-user">ユーザー名</a>
-                    </div>
-                </div>
-                <div class="rank-card">
-                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>
-                    <div class="">
-                        <h2 class="rank-card-title"><a href="">願望</a></h2>
-                        <a href="" class="rank-card-user">ユーザー名</a>
-                    </div>
-                </div>
+{{--                <div class="rank-card">--}}
+{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
+{{--                    <div class="">--}}
+{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
+{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="rank-card">--}}
+{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
+{{--                    <div class="">--}}
+{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
+{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="rank-card">--}}
+{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
+{{--                    <div class="">--}}
+{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
+{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </section>
     </div>
