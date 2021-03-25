@@ -51,7 +51,7 @@
                                 <h2 class="post-card-title"><a href="">{{$data->title}}</a></h2>
                                 <p class="post-card-name"><a href="">{{$data->user->name}}</a></p>
                                 <p class="post-card-count">閲覧数:{{$data->view_count}}</p>
-                                <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>
+{{--                                <a href="#ex1" rel="modal:open"><i class="far fa-trash-alt del-icon"></i></a>--}}
                             </div>
                         </div>
                     </div>

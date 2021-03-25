@@ -36,13 +36,13 @@
                 @endif
             </ul>
 
-            <ul class="art-post-ul">
-                <li class="art-post-list-text">タグ</li>
-                <li class="art-post-list-input"><input type="text" name="tag" class="art-post-input"></li>
-                @if($errors->has('tag'))
-                    <p class="form-error-text">{{$errors->first('tag')}}</p>
-                @endif
-            </ul>
+{{--            <ul class="art-post-ul">--}}
+{{--                <li class="art-post-list-text">タグ</li>--}}
+{{--                <li class="art-post-list-input"><input type="text" name="tag" class="art-post-input"></li>--}}
+{{--                @if($errors->has('tag'))--}}
+{{--                    <p class="form-error-text">{{$errors->first('tag')}}</p>--}}
+{{--                @endif--}}
+{{--            </ul>--}}
 
 
             <input type="submit" value="投稿" class="art-post-btn">

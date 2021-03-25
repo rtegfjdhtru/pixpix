@@ -13,11 +13,13 @@ class IndexController extends Controller {
 //        $user  = Auth::user();
 //        $param = ['items'=>$items, 'user'=>$user];
 
-
+        //sql ランキング
+//      SELECT * FROM artpost WHERE created_at >= '2021-03-24 00:00:00' order by view_count desc LIMIT 3
 
 
         $user  = Auth::user();
-        $items = ArtPost::all();
+//        $items = ArtPost::all();
+        $items = ArtPost::orderBy('id','desc')->limit(6)->get();
         $param = ['items'=>$items, 'user'=>$user];
         return view( 'main.index',$param );
     }

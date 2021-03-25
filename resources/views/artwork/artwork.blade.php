@@ -33,20 +33,21 @@
                     <input type="submit" value="削除" name="">
                     </form>
                 @endif
-                <div class="artwork-tag">
-                    <!--タグは10個まで -->
-                    <a href="">動物</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                    <a href="">カメレオン</a>
-                </div>
-                <p>{{$artwork->my_comment}}</p>
+{{--                <div class="artwork-tag">--}}
+{{--                    <!--タグは10個まで -->--}}
+{{--                    <a href="">動物</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                    <a href="">カメレオン</a>--}}
+{{--                </div>--}}
+                <p style="font-size: 16px;">{{$artwork->my_comment}}</p>
+{{--                <p>{{$artwork->}}</p>--}}
             </div>
             <div class="comment-content">
                 <h4 class="comment-title">コメント</h4>

@@ -29,7 +29,7 @@ class ArtRequest extends FormRequest {
             'image'        => 'required|mimes:jpg,png|max:31457280', //30MB
             'title'      => 'required',
             'my_comment' => '',
-            'tag'        => 'required',
+//            'tag'        => 'required',
         ];
     }
 
@@ -39,7 +39,7 @@ class ArtRequest extends FormRequest {
             'image.mimes' => '拡張子が違います。',
             'image.max' =>'容量が上限を超えています。30MB以内にしてください。',
             'title.required' => 'タイトルが空白です。',
-            'tag.required' => 'タグが空白です。',
+//            'tag.required' => 'タグが空白です。',
         ];
     }
 

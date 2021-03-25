@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <h3 class="main-center-title">急上昇中のタグ</h3>
+            <h3 class="main-center-title">急上昇中のキーワード</h3>
             <div class="main-center-tagarea">
                 <a href="search.html?search=モルカー">モルカー</a>
                 <a href="">お茶</a>
