@@ -53,30 +53,30 @@
                 </div>
             </div>
 
-            <h3 class="main-center-title">急上昇中のキーワード</h3>
-            <div class="main-center-tagarea">
-                <a href="search.html?search=モルカー">モルカー</a>
-                <a href="">お茶</a>
-                <a href="">呪術廻戦</a>
-                <a href="">鬼滅の刀</a>
-                <a href="">モルカー</a>
-                <a href="">お茶</a>
-                <a href="">呪術戦</a>
-                <a href="">鬼滅の刀</a>
-                <a href="">モルカー</a>
-                <a href="">お茶</a>
-                <a href="">呪術戦</a>
-                <a href="">鬼滅の刀</a>
-                <a href="">モルカー</a>
-                <a href="">お茶</a>
-                <a href="">呪術戦</a>
-                <a href="">鬼滅の刀</a>
-                <a href="">モルカー</a>
-                <a href="">お茶</a>
-                <a href="">呪術戦</a>
-                <a href="">鬼滅の刀</a>
+{{--            <h3 class="main-center-title">急上昇中のキーワード</h3>--}}
+{{--            <div class="main-center-tagarea">--}}
+{{--                <a href="search.html?search=モルカー">モルカー</a>--}}
+{{--                <a href="">お茶</a>--}}
+{{--                <a href="">呪術廻戦</a>--}}
+{{--                <a href="">鬼滅の刀</a>--}}
+{{--                <a href="">モルカー</a>--}}
+{{--                <a href="">お茶</a>--}}
+{{--                <a href="">呪術戦</a>--}}
+{{--                <a href="">鬼滅の刀</a>--}}
+{{--                <a href="">モルカー</a>--}}
+{{--                <a href="">お茶</a>--}}
+{{--                <a href="">呪術戦</a>--}}
+{{--                <a href="">鬼滅の刀</a>--}}
+{{--                <a href="">モルカー</a>--}}
+{{--                <a href="">お茶</a>--}}
+{{--                <a href="">呪術戦</a>--}}
+{{--                <a href="">鬼滅の刀</a>--}}
+{{--                <a href="">モルカー</a>--}}
+{{--                <a href="">お茶</a>--}}
+{{--                <a href="">呪術戦</a>--}}
+{{--                <a href="">鬼滅の刀</a>--}}
 
-            </div>
+{{--            </div>--}}
         </section>
 
         <section class="main-right">
@@ -92,27 +92,6 @@
                     @endforeach
 
                 </div>
-{{--                <div class="rank-card">--}}
-{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
-{{--                    <div class="">--}}
-{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
-{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="rank-card">--}}
-{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
-{{--                    <div class="">--}}
-{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
-{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="rank-card">--}}
-{{--                    <a href=""> <p class="rank-card-cover"><img src="dist/img/img9.jpg" alt="急上昇イラスト"></p></a>--}}
-{{--                    <div class="">--}}
-{{--                        <h2 class="rank-card-title"><a href="">願望</a></h2>--}}
-{{--                        <a href="" class="rank-card-user">ユーザー名</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
         </section>
     </div>
