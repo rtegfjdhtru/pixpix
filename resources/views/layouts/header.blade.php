@@ -10,7 +10,7 @@
                 <span></span>
             </div>
 
-            <form action="" method="get" class="header-form">
+            <form action="{{url('search')}}" method="get" class="header-form">
                 <input type="text" name="search" placeholder="検索" class="header-input">
                 <input type="submit" class="header-submit" value="検索">
             </form>

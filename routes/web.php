@@ -29,6 +29,7 @@ Route::post('hello','HelloController@post');
 
 
 Route::get('index',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
+Route::get('search',[App\Http\Controllers\IndexController::class, 'search']);
 
 
 Route::get('artpost',[App\Http\Controllers\ArtpostController::class, 'index']);
