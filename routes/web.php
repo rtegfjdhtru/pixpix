@@ -56,9 +56,8 @@ Route::get('passchange',function (){
     return view('pass.passchange');
 });
 
-Route::get('passreissue',function (){
-    return view('pass.passreissue');
-});
+
+Route::get('/passreissue',[App\Http\Controllers\PassResetController::class, 'index']);
 
 Route::get('passreturn',function (){
     return view('pass.passreturn');

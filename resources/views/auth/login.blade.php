@@ -35,7 +35,7 @@
 
                 <input type="submit" value="送信" class="form-submit">
                 <div class="form-link-content">
-                    <a href="passreissue.html" class="form-link-text">パスワードを忘れてしまった。</a>
+                    <a href="passreissue" class="form-link-text">パスワードを忘れてしまった。</a>
                     <a href="{{url('register')}}" class="form-link-text">新規登録</a>
                 </div>
             </form>
