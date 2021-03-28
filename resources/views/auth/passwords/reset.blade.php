@@ -80,7 +80,6 @@
                 <input type="hidden" name="token" value="{{ $token }}">
                 <label class="form-label">
                     <input type="text" name="email" placeholder="メールアドレス" class="form-input @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-                    <p class="form-error-text">メールアドレスの形式が違います。</p>
                 </label>
 
                 <label class="form-label">
@@ -88,7 +87,7 @@
                 </label>
 
                 @error('password')
-                <p class="form-error-text">{{ $message }}
+                <p class="form-error-text">{{ $message }}</p>
                 @enderror
 
                 <label class="form-label">
