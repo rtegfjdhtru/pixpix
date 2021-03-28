@@ -59,11 +59,19 @@
     <div class="signup-filed">
         <div class="signup-block">
             <h3 class="signup-title">パスワード再発行</h3>
-            <form class="signup-form" action="" method="post">
-
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+            <form class="signup-form" action="{{ route('password.email') }}" method="post">
+                @csrf
                 <label class="form-label">
-                    <input type="text" name="email" placeholder="登録したEmailを入力してください" class="form-input">
-                    <p class="form-error-text">メールアドレスの形式が違います。</p>
+                    <input id="email" type="text" name="email" placeholder="登録したEmailを入力してください" class="form-input @error('email') is-invalid @enderror" required autocomplete="email">
+
+                    @error('email')
+                    <p class="form-error-text">{{ $message }}</p>
+                    @enderror
                 </label>
 
 

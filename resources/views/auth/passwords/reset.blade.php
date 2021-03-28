@@ -1,5 +1,4 @@
 {{--
-
 @extends('layouts.app')
 
 @section('content')
@@ -65,34 +64,44 @@
     </div>
 </div>
 @endsection
-
-
 --}}
-
 @extends('layouts.common')
 
-@section('title','パスワード再発行')
+@section('title','パスワード変更画面')
 
-@include('layouts.headernomenu')
+@include('layouts.header')
 
 @section('content')
     <div class="signup-filed">
         <div class="signup-block">
-            <h3 class="signup-title">パスワード再発行</h3>
-            <form class="signup-form" action="" method="post">
-
+            <h3 class="signup-title">パスワードの変更</h3>
+            <form class="signup-form" action="{{ route('password.update') }}" method="post">
+                @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
                 <label class="form-label">
-                    <input type="text" name="email" placeholder="登録したEmailを入力してください" class="form-input">
+                    <input type="text" name="email" placeholder="メールアドレス" class="form-input @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                     <p class="form-error-text">メールアドレスの形式が違います。</p>
                 </label>
 
+                <label class="form-label">
+                    <input id="password" type="password" name="password" placeholder="パスワード入力" class="form-input @error('password') is-invalid @enderror">
+                </label>
+
+                @error('password')
+                <p class="form-error-text">{{ $message }}
+                @enderror
+
+                <label class="form-label">
+                    <input id="password-confirm" type="password" name="password_confirmation" placeholder="パスワード再入力" class="form-input" required autocomplete="new-password">
+                </label>
 
                 <input type="submit" value="送信" class="form-submit">
             </form>
         </div>
     </div>
-
 @endsection
 
 @include('layouts.footer')
+
+
 
