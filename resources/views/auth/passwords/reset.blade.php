@@ -65,6 +65,10 @@
 </div>
 @endsection
 --}}
+
+
+
+
 @extends('layouts.common')
 
 @section('title','パスワード変更画面')
@@ -79,8 +83,12 @@
                 @csrf
                 <input type="hidden" name="token" value="{{ $token }}">
                 <label class="form-label">
-                    <input type="text" name="email" placeholder="メールアドレス" class="form-input @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                    <input type="hidden" name="email" placeholder="メールアドレス" class="form-input @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                 </label>
+
+                @error('email')
+                <p class="invalid-error">{{ $message }}</p>
+                @enderror
 
                 <label class="form-label">
                     <input id="password" type="password" name="password" placeholder="パスワード入力" class="form-input @error('password') is-invalid @enderror">

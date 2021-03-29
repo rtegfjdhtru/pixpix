@@ -16,9 +16,9 @@ class ResetPasswordNotification extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -43,7 +43,7 @@ class ResetPasswordNotification extends Notification
         return (new MailMessage)
             ->subject(__('パスワードのリセット'))
                     ->line('アカウントのパスワードリセットリクエストを受け取ったため、このメールを受信しました。')
-                    ->action('パスワードをリセット', url('/'))
+                    ->action('パスワードをリセット', url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
                     ->line('このパスワードリセットリンクは60分で期限切れになります。');
     }
 
