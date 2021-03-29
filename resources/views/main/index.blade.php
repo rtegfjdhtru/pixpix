@@ -19,7 +19,7 @@
                     <div class="main-left-info">
                         <a href="profile" class="main-left-link">プロフィール</a>
                         <a href="mycontrol" class="main-left-link">イラスト管理</a>
-                        <a href="history" class="main-left-link">履歴</a>
+{{--                        <a href="history" class="main-left-link">履歴</a>--}}
                     </div>
                 </div>
             </div>

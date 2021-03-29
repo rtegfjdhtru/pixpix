@@ -15,10 +15,9 @@ class IndexController extends Controller {
 
         $user  = Auth::user();
         //新着のイラスト
-//        $items = ArtPost::orderBy('id','desc')->limit(6)->get();
+        $items = ArtPost::orderBy('id','desc')->limit(6)->get();
         //一旦全てに適用
-        $items = ArtPost::orderBy('id','desc')->limit(16)->get();
-//ランキング機能
+//        $items = ArtPost::orderBy('id','desc')->limit(16)->get();
         $rank = DB::table('artpost')->where('created_at','>=',DB::raw('DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)'))->orderby('view_count','desc')->limit(3)->get();
         $param = ['items'=>$items, 'user'=>$user,'rank'=>$rank];
         return view( 'main.index',$param );
