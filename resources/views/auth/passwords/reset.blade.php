@@ -73,7 +73,7 @@
 
 @section('title','パスワード変更画面')
 
-@include('layouts.header')
+@include('layouts.headernomenu')
 
 @section('content')
     <div class="signup-filed">

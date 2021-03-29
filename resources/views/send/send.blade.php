@@ -11,6 +11,7 @@
         <div class="signup-block">
             <h3 class="signup-title">パスワードが変更されました。</h3>
         </div>
+        <
     </div>
 @endsection
 

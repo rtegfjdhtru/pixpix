@@ -29,7 +29,11 @@
 
         <section class="main-center">
             <div class="main-center-title">新着のイラスト</div>
-
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="main-center-postarea-body">
                 <div class="main-center-postarea">
 
@@ -80,7 +84,7 @@
         </section>
 
         <section class="main-right">
-            <h3 class="main-center-title">急上昇中のイラスト</h3>
+            <h3 class="main-center-title">本日急上昇中のイラスト</h3>
             <div class="main-right-inner">
                 <div class="rank-card">
                     @foreach($rank as $data)

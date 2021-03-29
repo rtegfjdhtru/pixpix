@@ -1,6 +1,6 @@
 @extends('layouts.common')
 
-@section('title','いいね')
+@section('title','検索結果')
 
 @include('layouts.header')
 
