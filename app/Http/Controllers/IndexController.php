@@ -40,10 +40,11 @@ class IndexController extends Controller {
         $data = 'あいうえお';
         return view( 'main.index', [ 'data' => $data ] );
     }
+
     public function search(Request $request){
         $keyword = $request->search ?? '';
         $pat = '%' . addcslashes($keyword, '%_\\') . '%';
-        $searchData = ArtPost::where('title',"LIKE",$pat)->get();
+        $searchData = ArtPost::where('title',"LIKE",$pat)->paginate(4);
         $param = [
             'searchData' => $searchData,
         ];

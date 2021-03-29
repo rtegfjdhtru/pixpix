@@ -37,6 +37,9 @@
 
             <nav class="pagination">
 {{--                {{$searchData->links('pagination::bootstrap-4')}}--}}
+                {{$searchData->appends(Request::only('search'))->links('pagination::bootstrap-4')}}
+
+
 
                 {{--                <ul>--}}
                 {{--                    <li><a href="" class="pagination-active">1</a></li>--}}
