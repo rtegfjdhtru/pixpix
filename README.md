@@ -10,7 +10,7 @@ UI面が少し不憫、アドリブで画面を作っていたためとっつく
 作る前に十分に設計しないといけないと感じた。
 
 
-http://snowy-obi-3843.oops.jp/pixpix/public/login　
+http://snowy-obi-3843.oops.jp/pixpix/public/login
 でログイン
 
 http://snowy-obi-3843.oops.jp/pixpix/public/register
